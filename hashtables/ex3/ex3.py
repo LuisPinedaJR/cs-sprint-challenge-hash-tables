@@ -3,8 +3,20 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    intersects = []
 
-    return result
+    hash = {}
+    for list in arrays:
+        for key in list:
+            if key in hash:
+                hash[key] += 1
+            else:
+                hash[key] = 1
+
+            if hash[key] == len(arrays):
+                intersects.append(key)
+
+    return intersects
 
 
 if __name__ == "__main__":
